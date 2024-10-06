@@ -1,0 +1,34 @@
+<% layout('layouts/boilerplate') %>
+<div id="cluster-map" style="box-shadow: 0 0 15px -7.5px gray"></div>
+<br />
+<h1>All Campgrounds</h1>
+<br />
+<% for (let campground of campgrounds.slice().reverse()) {%>
+<div class="card mb-3" style="box-shadow: 0 0 15px -7.5px gray">
+  <div class="col-md-4">
+    <img
+      crossorigin="anonymous"
+      src="<%= campground.images[0] && campground.images[0].url ? campground.images[0].url : '' %>"
+      class="img-fluid"
+      alt="Campground Image"
+    />
+  </div>
+  <div class="col-mg-8">
+    <div class="card-body">
+      <h5 class="card-title"><%= campground.title %></h5>
+      <p class="card-text"><%= campground.description %></p>
+      <p class="card-text">
+        <small class="text-muted"><%= campground.location %></small>
+      </p>
+      <a href="/campgrounds/<%= campground._id %>" class="btn btn-primary"
+        >View</a
+      >
+    </div>
+  </div>
+</div>
+<% } %>
+<script>
+  const maptilerApiKey = '<%- process.env.MAPTILER_KEY %>';
+  const campgrounds = { features: <%- JSON.stringify(campgrounds) %>}
+</script>
+<script src="/javascripts/clusterMap.js"></script>
