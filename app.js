@@ -28,11 +28,11 @@ const reviewRoutes = require('./routes/reviews');
 const session = require('express-session');
 const MongoStore = require("connect-mongo");
 
-// const dbUrl = process.env.DB_URL;
-// mongoose.connect(dbUrl);
-
-const dbUrl = 'mongodb://localhost:27017/yelp-camp';
+const dbUrl = process.env.DB_URL;
 mongoose.connect(dbUrl);
+
+// const dbUrl = 'mongodb://localhost:27017/yelp-camp';
+// mongoose.connect(dbUrl);
 
 const db = mongoose.connection;
 db.on('error', console.error.bind(console, "connection error:"));
