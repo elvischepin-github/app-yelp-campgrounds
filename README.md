@@ -1,5 +1,7 @@
 Link ➵ https://app-yelp-campgrounds.onrender.com/
-> Please note that loading may take a minute or two due to the use of free hosting.
+> Tinklapio užkrovimas gali trukti apie **minutę**, dėl nemokamų publikavimo paslaugų.
+
+> Please note that loading may take about a **minute** due to the use of free hosting.
 ---
 # Aprašymas
 Full-stack svetainė, leidžianti vartotojams prisiregistruoti ir prisijungti.  
